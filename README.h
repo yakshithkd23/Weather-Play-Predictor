@@ -47,13 +47,13 @@ sv = subset data value of s(example : weather it may be sunny or rainy entropy v
 Example: Play Tennis Decision Tree
 
  
-ID	Weather	Windy	Play Tennis
-1	Sunny 	Yes	No
-2	Sunny   	No	   No
-3	Overcast	 Yes	Yes
-4	Rainy	    Yes	Yes
-5	Rainy     No	  Yes
-6	Overcast 	No 	Yes
+ID	Weather	  Windy  	Play Tennis
+1	Sunny    	Yes	     No
+2	Sunny   	   No	        No
+3	Overcast	   Yes	    Yes
+4	Rainy	      Yes	    Yes
+5	Rainy       No	       Yes
+6	Overcast  	No 	    Yes
 
 step 1: Compute Entropy of the Whole Dataset  by using equation  1 
                     p+=4/6
@@ -61,10 +61,10 @@ step 1: Compute Entropy of the Whole Dataset  by using equation  1
  so ,E(S)=0.91
 
  step 2: compute entropy for weather attribute.
- Weather	Yes (Play)	No (Play)	Total
-Sunny	     0	         2	        2
-Overcast	   2	         0	        2
-Rainy    	2	         0	        2
+ Weather	 Yes (Play) 	No (Play)	Total
+Sunny	      0	         2	          2
+Overcast	   2	         0	          2
+Rainy    	2	         0	          2
       
 by applying equation 1 you will get entropy of sunny, overcast,rainy as 0,0,0
   after these apply equation 3 
@@ -77,9 +77,9 @@ step 3:  Compute Information Gain for Weather
 Since IG(Weather) is high, it is a good splitting attribute.
 
 Step 4: Compute Information Gain for Wind
-Windy	Yes (Play)	No (Play)	Total
-Yes      	2     	2	       4
-No	         2	      0	       2
+Windy	  Yes (Play)	No (Play)	Total
+Yes      	2     	  2	       4
+No	         2	        0	       2
 
 Entropy for windy =Yes:
     E(yes)=1

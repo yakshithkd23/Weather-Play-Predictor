@@ -48,7 +48,7 @@ sv = subset data value of s(example : weather it may be sunny or rainy entropy v
 
 
 
-Example: Play Tennis Decision Tree
+Example: Play cricket  Decision Tree
 
 
 
@@ -71,53 +71,79 @@ Example: Play Tennis Decision Tree
 
 
 step 1: Compute Entropy of the Whole Dataset  by using equation  1 
-                    p+=4/6
-                    p-=2/6
- so ,E(S)=0.91
+                    p+=9/14
+                    p-=5/14
+ so ,E(S)=0.940
 
- step 2: compute entropy for weather attribute.
-
-| Weather  | Yes (Play) | No (Play) | Total |
-|----------|-----------|----------|-------|
-| Sunny    | 0         | 2        | 2     |
-| Overcast | 2         | 0        | 2     |
-| Rainy    | 2         | 0        | 2     |
-
+ step 2: compute entropy for each attribute.
+1. Entropy of Outlook
+Outlook has 3 possible values: Sunny, Overcast, Rainy
+   
+| Outlook  | Play Yes | Play No | Total |
+|----------|---------|---------|-------|
+| Sunny    | 2       | 3       | 5     | 
+| Overcast | 4       | 0       | 4     | 
+| Rainy    | 3       | 2       | 5     | 
       
-by applying equation 1 you will get entropy of sunny, overcast,rainy as 0,0,0
+by applying equation 1 you will get entropy of sunny, overcast,rainy as 0.971,0,0.971
   after these apply equation 3 
-    so, E(After) is also 0
+    so, E(After) is  0.692
+apply equation 2 :
+        IG(weather)=0.247
+           
+2. Entropy of Humidity
 
-step 3:  Compute Information Gain for Weather
-        apply equation 2 
-        so IG(weather)=0.91
-        
-Since IG(Weather) is high, it is a good splitting attribute.
+| Humidity | Play Yes | Play No | Total |
+|----------|---------|---------|-------|
+| High     | 3       | 4       | 7     | 
+| Normal   | 6       | 1       | 7     |  
 
-Step 4: Compute Information Gain for Wind
+   Entropy is 0.985 and 0.592 
+     E(After) =0.789
+     IG(humidity)=0.151
+3. Entropy of Windy
+| windy    | Play Yes | Play No | Total |
+|----------|---------|---------|-------|
+| True     | 3       | 3       | 6     | 
+| Normal   | 6       | 2       | 8     | 
+   Entropy is 1.0 and 0.811
+     E(After) =0.891
+     IG(windy)=0.049
+4. Entropy of Temperature
+|Tempara   | Play Yes | Play No | Total |
+|----------|---------|---------|-------|
+| hot    | 2       | 2       | 4     | 
+| mild   | 4       | 2       | 6     | 
+| cool   | 3       | 1       | 4     | 
 
-| Windy | Yes (Play) | No (Play) | Total |
-|-------|-----------|----------|-------|
-| Yes   | 2         | 2        | 4     |
-| No    | 2         | 0        | 2     |
+    Entropy is 1.0 and 0.918
+     E(After) =0.91
+     IG(temp)=0.029
 
-Entropy for windy =Yes:
-    E(yes)=1
-Entropy for windy =No:
-   E(no)=0
- information gain is   0.24
+Step 3: Choosing the Best Attribute
 
- step 5: Choose the best attribute
- IG(weather)=0.91
- IG(windy)=0.24 
- Since Weather has the highest IG (0.91), it is chosen as the root node for the decision tree.
-      Weather
-     /   |   \
- Sunny  Overcast  Rainy
-  |       |       |
-  No     Yes      Yes
+Outlook has the highest Information Gain (0.247), we split the dataset based on Outlook first.
 
-    
+   Step 4: Constructing the Decision Tree
+
+        Outlook
+       /   |    \
+  Sunny Overcast  Rainy
+   /    \     |      /    \
+Humidity No  Yes  Windy  Yes
+ /    \        /     \
+High Normal  False  True
+ No    Yes    Yes    No
+
+1.If Outlook = Overcast → Play = Yes
+2.If Outlook = Sunny:
+    If Humidity = High → Play = No
+    If Humidity = Normal → Play = Yes
+3.If Outlook = Rainy:
+     If Windy = False → Play = Yes
+     If Windy = True → Play = No
+
+   
 References:
 https://www.sciencedirect.com/topics/psychology/recursive-partitioning
 

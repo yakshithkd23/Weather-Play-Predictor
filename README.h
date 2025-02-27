@@ -25,6 +25,8 @@ The tree is built using a recursive partitioning approach, selecting the best at
 
 📝 note: Recursive partioning approach-is popular predictive modeling techniques.it creates a tree like structure based on data splits. it is simple to interpret using “if-then” rules.Handles classification and regression tasks.Efficient in pattern recognition for medical and data science applications.
 
+Mathematical Calculation for Decision Tree Construction (ID3 Algorithm
+
 formulas:
 Entropy (E): Measures data impurity.
 E(s)= -(p1*log2(p1)+p2*log2(p2))  .....equ(1)
@@ -44,17 +46,28 @@ IG= E(s)-E(after)   ......equ(2)
 |Sv|=number of instance in Sv (example under total, 5 number of rainy is there so it is |Sv| is 5)
 sv = subset data value of s(example : weather it may be sunny or rainy entropy value )
 
+
+
 Example: Play Tennis Decision Tree
 
 
-| ID | Weather  | Windy | Play Tennis |
-|----|---------|-------|-------------|
-| 1  | Sunny   | Yes   | No          |
-| 2  | Sunny   | No    | No          |
-| 3  | Overcast| Yes   | Yes         |
-| 4  | Rainy   | Yes   | Yes         |
-| 5  | Rainy   | No    | Yes         |
-| 6  | Overcast| No    | Yes         |
+
+| Day  | Outlook  | Temperature | Humidity | Windy  | Play |
+|------|---------|------------|----------|--------|------|
+| D1   | Rainy   | Hot        | High     | False  | No   |
+| D2   | Rainy   | Hot        | High     | True   | No   |
+| D3   | Overcast| Hot        | High     | False  | Yes  |
+| D4   | Sunny   | Mild       | High     | False  | Yes  |
+| D5   | Sunny   | Cool       | Normal   | False  | Yes  |
+| D6   | Sunny   | Cool       | Normal   | True   | No   |
+| D7   | Overcast| Cool       | Normal   | True   | Yes  |
+| D8   | Rainy   | Mild       | High     | False  | No   |
+| D9   | Rainy   | Cool       | Normal   | False  | Yes  |
+| D10  | Sunny   | Mild       | Normal   | False  | Yes  |
+| D11  | Rainy   | Mild       | Normal   | True   | Yes  |
+| D12  | Overcast| Mild       | High     | True   | Yes  |
+| D13  | Overcast| Hot        | Normal   | False  | Yes  |
+| D14  | Sunny   | Mild       | High     | True   | No   |
 
 
 step 1: Compute Entropy of the Whole Dataset  by using equation  1 

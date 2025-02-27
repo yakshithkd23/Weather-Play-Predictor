@@ -55,6 +55,16 @@ ID	Weather	  Windy  	Play Tennis
 5	Rainy       No	       Yes
 6	Overcast  	No 	    Yes
 
+| ID | Weather  | Windy | Play Tennis |
+|----|---------|-------|-------------|
+| 1  | Sunny   | Yes   | No          |
+| 2  | Sunny   | No    | No          |
+| 3  | Overcast| Yes   | Yes         |
+| 4  | Rainy   | Yes   | Yes         |
+| 5  | Rainy   | No    | Yes         |
+| 6  | Overcast| No    | Yes         |
+
+
 step 1: Compute Entropy of the Whole Dataset  by using equation  1 
                     p+=4/6
                     p-=2/6

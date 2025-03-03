@@ -5,6 +5,7 @@ import pandas as pd
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
 
 # Load dataset
 data = pd.DataFrame({
@@ -29,6 +30,11 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 # Train decision tree model
 model = DecisionTreeClassifier(criterion="entropy", random_state=42)
 model.fit(X_train, y_train)
+
+# Evaluate accuracy on test data
+y_pred = model.predict(X_test)
+test_accuracy = accuracy_score(y_test, y_pred)
+print(f"Test Accuracy: {test_accuracy:.2f}")
 
 # Save model
 with open("decision_tree_model.pkl", "wb") as model_file:
@@ -72,4 +78,4 @@ def predict():
         return render_template("index.html", prediction=f"Error: {str(e)}")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True) 

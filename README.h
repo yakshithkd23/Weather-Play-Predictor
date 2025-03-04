@@ -1,25 +1,25 @@
-# Weather-Play-Predictor
+**# Weather-Play-Predictor**
 Flask-based web application that predicts whether it's a good idea to play outside based on weather conditions.
-Description:
+**Description:**
 This project is a Flask-based web application that predicts whether it's a good idea to play outside based on weather conditions. It utilizes a Decision Tree Model trained on weather data and takes user inputs such as outlook, temperature, humidity, and wind status to make predictions.
 
-Features: 
+**Features:**
 ✅ User-friendly Web Interface 🎨
 ✅ Machine Learning Model (Decision Tree) 🤖
 ✅ Real-time Weather Prediction 🌦️
 ✅ Flask Backend & HTML/CSS Frontend 🌐
 
-Technologies Used:
+**Technologies Used:**
 Python 🐍 (Flask, NumPy, Pickle)  
 HTML, CSS 🎨 (for UI)
 Machine Learning (Decision Tree Classifier)
 
 
-What is Decision tree ?
+***What is Decision tree ?***
 
 Decison tree is the type of machine learning . it can used for the classification and regression .it will split the data into the different branches based on the feature condition and final calss represent the predicted class or value.
 
-how it works?
+**how it works?**
 
 The tree is built using a recursive partitioning approach, selecting the best attribute at each step based on Entropy and Information Gain.
 
@@ -27,7 +27,7 @@ The tree is built using a recursive partitioning approach, selecting the best at
 
 Mathematical Calculation for Decision Tree Construction (ID3 Algorithm
 
-formulas:
+**formulas:**
 Entropy (E): Measures data impurity.
 E(s)= -(p1*log2(p1)+p2*log2(p2))  .....equ(1)
 
@@ -48,7 +48,7 @@ sv = subset data value of s(example : weather it may be sunny or rainy entropy v
 
 
 
-Example: Play cricket  Decision Tree
+**Example: Play cricket  Decision Tree**
 
 
 
@@ -143,8 +143,60 @@ High Normal  False  True
      If Windy = False → Play = Yes
      If Windy = True → Play = No
 
+*** performance evaluation:***
    
+Decision tree used for classification tasks, but their performance need to be ensure properly that's why performance mease
+   is came in picture i.e recall , precision, accuracy
+
+   1.Recall(sensitivity)- measure how well we find all positive cases
+
+      Recall =TP/TP+FN
+      TP= True positive
+      FN= False negative
+NOTE:
+     actual    prediction 
+      1         0            FN
+      0          1           FP
+      0          0            TN
+      1           1            TP
+   2. Precision
+Measures how many predicted positives are actually correct.
+
+  precision= TP/TP+FP
+️3. Accuracy
+Measures overall correctness (both positives & negatives).
+   Accuracy= TP+TN/TP+TN+FP+FN
+
+ calculation for my code:
+
+| Day  | Actual (Play?) | Predicted (Play?) | Category |
+|------|--------------|------------------|----------|
+| D1   | No           | No               | TN ✅    |
+| D2   | No           | No               | TN ✅    |
+| D3   | Yes          | Yes              | TP ✅    |
+| D4   | Yes          | Yes              | TP ✅    |
+| D5   | Yes          | Yes              | TP ✅    |
+| D6   | No           | Yes              | FP ❌    |
+| D7   | Yes          | Yes              | TP ✅    |
+| D8   | No           | No               | TN ✅    |
+| D9   | Yes          | Yes              | TP ✅    |
+| D10  | Yes          | Yes              | TP ✅    |
+| D11  | Yes          | Yes              | TP ✅    |
+| D12  | Yes          | Yes              | TP ✅    |
+| D13  | Yes          | No               | FN ❌    |
+| D14  | No           | No               | TN ✅    |
+
+Final Results
+Recall = 0.8889 (88.89%)
+Precision = 0.8889 (88.89%)
+Accuracy = 0.8571 (85.71%)
+
+
+
+
+
 References:
 https://www.sciencedirect.com/topics/psychology/recursive-partitioning
+https://leetcode.com/explore/learn/card/decision-tree/501/evaluation/2638/
 
 

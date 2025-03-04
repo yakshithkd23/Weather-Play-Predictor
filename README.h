@@ -166,8 +166,7 @@ Measures how many predicted positives are actually correct.
 ️3. Accuracy
 Measures overall correctness (both positives & negatives).
    Accuracy= TP+TN/TP+TN+FP+FN
-
- calculation for my code:
+******
 
 | Day  | Actual (Play?) | Predicted (Play?) | Category |
 |------|--------------|------------------|----------|

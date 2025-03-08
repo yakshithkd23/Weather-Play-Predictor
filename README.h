@@ -155,9 +155,9 @@ Decision tree used for classification tasks, but their performance need to be en
       FN= False negative
 NOTE:
      actual    prediction 
-      1         0            FN
-      0          1           FP
-      0          0            TN
+      1           0            FN
+      0           1            FP
+      0           0            TN
       1           1            TP
    2. Precision
 Measures how many predicted positives are actually correct.

@@ -2,7 +2,7 @@ import streamlit as st
 import joblib
 
 # Load the trained decision tree model
-model = joblib.load("decision_tree_model.pkl")
+model = joblib.load("weather/decision_tree_model.pkl")
 
 # App title
 st.title("Weather Play Predictor")
